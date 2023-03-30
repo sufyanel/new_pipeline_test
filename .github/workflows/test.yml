@@ -19,6 +19,6 @@ jobs:
             cd /Odoo/env/newtest/addons/new_pipeline_test
             git pull origin master # we pull any changes from git
             source /Odoo/env/newtest/bin/activate
-            /Odoo/src/odoo/odoo-bin -c /Odoo/env/newtest/config/test.conf -i account --stop-after-init
+            /Odoo/src/odoo/odoo-bin -c /Odoo/env/newtest/config/new.conf -i account --stop-after-init
             deactivate
 
