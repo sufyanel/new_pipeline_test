@@ -18,4 +18,9 @@ jobs:
           script: |
             cd /Odoo/env/env15/addons/new_pipeline_test
             git pull origin master # we pull any changes from git
-            systemctl restart odoo
+            systemctl stop odoo
+            source /Odoo/env/env15/bin/activate
+            /Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i crm --stop-after-init
+            deactivate
+            systemctl start odoo
+
