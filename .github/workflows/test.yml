@@ -16,6 +16,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
           script: |
-            cd /Odoo/env/env15/addons/pipeline_test
+            cd /Odoo/env/env15/addons/new_pipeline_test
             git pull origin master # we pull any changes from git
             systemctl restart odoo
