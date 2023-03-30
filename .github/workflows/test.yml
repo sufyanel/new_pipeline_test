@@ -16,6 +16,7 @@ jobs:
           password: ${{ secrets.PASSWORD }} 
           port: ${{ secrets.PORT }} 
           script: |
+            ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -t ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'echo SSH command executed successfully'
             cd /Odoo/env/env15/addons/pipeline_test
             git pull origin master # we pull any changes from git
             sudo service odoo stop
