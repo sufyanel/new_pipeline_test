@@ -15,5 +15,6 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
+      - name: Export AWS profile       
         run: sudo apt-get update
 
