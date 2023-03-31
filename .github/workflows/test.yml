@@ -15,12 +15,12 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
-           run: |
-             cd /Odoo/env/env15/addons/new_pipeline_test
-             git pull origin master
-             suod systemctl stop odoo
-             source /Odoo/env/env15/bin/activate
-             /Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i account --stop-after-init
-             deactivate
-             sudo systemctl start odoo
+          run: |
+            cd /Odoo/env/env15/addons/new_pipeline_test
+            git pull origin master
+            sudo systemctl stop odoo
+            source /Odoo/env/env15/bin/activate
+            /Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i account --stop-after-init
+            deactivate
+            sudo systemctl start odoo
 
