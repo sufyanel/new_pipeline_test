@@ -16,3 +16,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
           run: sudo service odoo restart
+          command_timeout: '5m'
