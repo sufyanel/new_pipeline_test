@@ -13,14 +13,14 @@ jobs:
         with: # We set all our secrets here for the action, these won't be shown in the action logs 
           host: ${{ secrets.HOST }} 
           username: ${{ secrets.USERNAME }} 
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }} 
           script: |
-            cd /Odoo/env/newtest/addons/new_pipeline_test
+            cd /Odoo/env/env15/addons/new_pipeline_test
             git pull origin master # we pull any changes from git
-            service odootest stop
-            source /Odoo/env/newtest/bin/activate
-            /Odoo/src/odoo/odoo-bin -c /Odoo/env/newtest/config/new.conf -i crm --stop-after-init
+            sudo systemctl stop odoo
+            source /Odoo/env/env15/bin/activate
+            /Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i account --stop-after-init
             deactivate
-            service odootest start
+            sudo systemctl start odoo
 
