@@ -19,7 +19,7 @@ jobs:
             cd /Odoo/env/env15/addons/new_pipeline_test
             git pull origin master # we pull any changes from git
       - name: service stop and upgrade module       
-        run: sudo service odoo stop
+        run: sudo systemctl stop odoo
       - name: activate Env
         run: source /Odoo/env/env15/bin/activate
       - name: upgrade module
@@ -29,4 +29,5 @@ jobs:
       - name: Enable service
         run: sudo systemctl enable odoo.service
       - name: Restart Odoo service
-        run: sudo service odoo start
+        run: sudo systemctl start odoo
+
