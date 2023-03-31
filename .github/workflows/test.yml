@@ -19,4 +19,4 @@ jobs:
             cd /Odoo/env/env15/addons/new_pipeline_test
             git pull origin master # we pull any changes from git
       - name: service stop and upgrade module       
-        run: sudo service odoo restart
+        run: sudo apt-get update
