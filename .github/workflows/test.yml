@@ -15,5 +15,12 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
-        run: sudo apt-get update
+          script: |
+            cd /Odoo/env/env15/addons/new_pipeline_test
+            git pull origin master # we pull any changes from git
+            systemctl stop odoo
+            source /Odoo/env/env15/bin/activate
+            /Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i account --stop-after-init
+            deactivate
+            systemctl start odoo
 
