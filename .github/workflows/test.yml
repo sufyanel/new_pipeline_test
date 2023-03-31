@@ -16,5 +16,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
           script: |
+             cd /Odoo/env/env15/addons/new_pipeline_test
              chmod +x deploy.sh
              ./deploy.sh
