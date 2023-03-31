@@ -15,4 +15,4 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
-        run: sudo service odoo restart
+          run: sudo service odoo restart
