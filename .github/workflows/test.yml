@@ -15,6 +15,7 @@ jobs:
           username: ${{ secrets.USERNAME }} 
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }} 
+          ssh_options: "-o StrictHostKeyChecking=no"
           script: |
              cd /Odoo/env/env15/addons/new_pipeline_test
              chmod +x deploy.sh
