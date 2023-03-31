@@ -26,5 +26,7 @@ jobs:
         run: /Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i account --stop-after-init
       - name: Deactivate Env
         run: deactivate
+      - name: Enable service
+        run: sudo systemctl enable odoo.service
       - name: Restart Odoo service
         run: sudo service odoo start
