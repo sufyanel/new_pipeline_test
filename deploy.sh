@@ -8,4 +8,4 @@ git pull origin master
 #/Odoo/src/odoo/odoo-bin -c /Odoo/env/env15/config/env15.conf -i account --stop-after-init
 #deactivate
 #systemctl start odoo
-service nginx restart
+sudo service nginx restart
